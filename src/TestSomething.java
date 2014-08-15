@@ -1,14 +1,23 @@
-import java.util.Arrays;
+import java.text.DateFormatSymbols;
+import java.util.Locale;
 
 
 
 public class TestSomething {
 
 	public static void main(String[] args) {
-		int[] sn = {2, 3, 5, 7, 11, 13};
-		int[] ln = {101, 102, 103, 104, 105, 106, 107};
-		System.arraycopy(sn, 2, ln, 3, 4);
-		System.out.println(Arrays.toString(ln));
+		DateFormatSymbols dfs = new DateFormatSymbols(new Locale("ru", "RU"));
+		String[] months = dfs.getMonths();
+		for (String m : months) {
+			System.out.print(m + " ");
+		}
+		System.out.println();
+		
+		String[] wd = dfs.getWeekdays();
+		for (String d : wd) {
+			System.out.print(d + " ");
+		}
+		System.out.println();
 	}
 	
 }
