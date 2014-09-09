@@ -1,23 +1,25 @@
-import java.text.DateFormatSymbols;
-import java.util.Locale;
-
-
-
 public class TestSomething {
 
 	public static void main(String[] args) {
-		DateFormatSymbols dfs = new DateFormatSymbols(new Locale("ru", "RU"));
-		String[] months = dfs.getMonths();
-		for (String m : months) {
-			System.out.print(m + " ");
-		}
-		System.out.println();
+		System.out.println("Starting main()");
+		sleep(2);
 		
-		String[] wd = dfs.getWeekdays();
-		for (String d : wd) {
-			System.out.print(d + " ");
+		System.out.println("Defining Foo f");
+		Foo f = new Foo();
+		
+		sleep(2);
+//		Foo f2 = new Foo();
+		System.out.println("Finishing main()");
+	}
+
+	private static void sleep(int sec) {
+		System.out.printf("about to sleep %d sec%n", sec);
+		long millis = sec * 1000;
+		try {
+			Thread.sleep(millis );
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		System.out.println();
 	}
 	
 }
